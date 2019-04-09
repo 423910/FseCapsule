@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using SPA_DL;
 using SPA_BL;
@@ -33,9 +33,9 @@ namespace SPA_WebAPI.Tests
             var controller = new Controllers.TasksController();
             var task = new Task
             {
-                Task_ID = 3,
+                Task_ID = 2,
                 Task_Name = "test",
-                Parent_ID = 2,
+                Parent_ID = null,
                 Priority = 4,
                 Start_Date = DateTime.Now
             };
@@ -51,7 +51,7 @@ namespace SPA_WebAPI.Tests
             // Set up Prerequisites   
             var controller = new Controllers.TasksController();
             // Act on Test  
-            var response = controller.DeleteTask(6);
+            var response = controller.DeleteTask(4);
             // Assert the result  
             Assert.IsTrue(response);
         }
@@ -62,7 +62,7 @@ namespace SPA_WebAPI.Tests
             // Set up Prerequisites   
             var controller = new Controllers.TasksController();
             // Act on Test  
-            var response = controller.ViewTask(4);
+            var response = controller.ViewTask(3);
             // Assert the result  
             Assert.IsTrue(response != null);
         }
